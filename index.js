@@ -19,11 +19,11 @@ app.get('/trigger-post', async (req, res) => {
       status
     };
 
-    const response = await fetch('https://automation-cloud.qa.dev.tactful.ai/flows/302662/run', {
+    const response = await fetch('https://automation-cloud.tactful.ai/flows/68214/run', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'b4679acde1a6f849e8c51e9143d3d082d18a5674330b5dc85b1b1726c5e119e4'
+        'x-api-key': 'ce9df86a3dfb564ccedbb3bfa682dd8c74c467a8a5cc6c50b6e7a10223e7a1ef'
       },
       body: JSON.stringify(postData)
     });
