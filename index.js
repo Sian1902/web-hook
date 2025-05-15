@@ -6,7 +6,7 @@ app.use(express.json());
 
 // GET endpoint that triggers a POST request
 app.get('/trigger-post', async (req, res) => {
-  const { id, start_date, status } = req.query;
+  const { id, start_date, status,conversation_id } = req.query;
 
   if (!id || !start_date || !status) {
     return res.status(400).json({ error: 'Missing required query parameters: id, start_date, status' });
@@ -16,7 +16,8 @@ app.get('/trigger-post', async (req, res) => {
     const postData = {
       id,
       start_date,
-      status
+      status,
+      conversation_id
     };
 
     const response = await fetch('https://automation-cloud.tactful.ai/flows/68214/run', {
